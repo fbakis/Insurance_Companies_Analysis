@@ -1,0 +1,89 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import datetime as dt
+from openpyxl.workbook import Workbook
+
+pd.set_option('display.expand_frame_repr', False)
+
+from datetime import datetime 
+from dateutil.relativedelta import *
+import os.path
+df_arrays=[]
+i=0
+date=datetime.strptime('012015', "%m%Y").date()
+
+while True:
+  
+    file_name=r'C:\Python_Projects\Proje_1\datas\Prim_%s.xls'%(date.strftime('%m%Y'))  
+    #print(date.strftime('%m%Y'))
+    if not os.path.isfile(file_name):
+        break;
+        if date>datetime.strptime('102018', "%m%Y").date():
+            break
+        continue;
+    xls_file1 = pd.ExcelFile(file_name)
+    df1 = xls_file1.parse('Genel Toplam', skiprows=5)
+    df_1=df1.iloc[:,1:5]
+    new_column=pd.to_datetime(date.strftime("%Y-%m"))
+    df_1_1=df_1.assign(dates= new_column)
+   
+    
+    df_1_1.columns=['Sirket','Sirket Kodu','Toplam Uretim','Pazar Payi','Dates']
+    
+    df_arrays.append(df_1_1)
+    date=date+relativedelta(months=+1)
+           
+
+
+
+result=pd.concat(df_arrays,sort=False,ignore_index=True)
+result = result.sort_values(by=['Sirket Kodu','Dates'], inplace=False)
+result.columns=['Sirket','SirketKodu','ToplamUretim','PazarPayi','Dates']
+#print(m)
+filtered_result = result.query("SirketKodu.notnull() and Sirket!='SEKTÖR TOPLAMI'",engine='python')
+#filtered_result['Sirket Kodu'].values.dtype
+filtered_result1 = filtered_result.groupby(by='SirketKodu')
+filtered_result1=filtered_result1.apply(lambda x: x.reset_index(drop=True))
+
+#filtered_result.to_xls('output.xls')
+#writer = pd.ExcelWriter('output.xlsx')
+#filtered_result.to_xls(writer,'Sheet1')
+
+
+#EXPORT TO EXCEL
+#writer = pd.ExcelWriter('summary.xlsx')
+#filtered_result.to_excel(writer, index=True)
+#writer.save()
+
+
+##DESCRIPTIVE STATISTICS
+#filtered_result.describe()
+#filtered_result2.mean()
+
+#Scatter Plot
+
+#Allianz Scatter Plot,
+#grouped = df.groupby('Year')
+#print(filtered_result.get_group(1004))
+#print(filtered_result2.value())
+
+#for c,name in filtered_result1.groups: 
+ #   print(c)
+  #  print(name)
+
+for name, group in filtered_result1.items(): 
+    # print the name of the regiment
+    #print(name)
+    # print the data of that regiment
+    #print(group)
+    if name==1001:
+         print(name)
+    # print the data of that regiment
+         print(group)
+     #   x=group.SirketKodu
+     #   y=group.ToplamUretim
+      #  plt.scatter(x,y)
+        
+    else:
+        break;
