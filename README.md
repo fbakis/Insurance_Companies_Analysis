@@ -14,9 +14,9 @@ Market share and total premium which is in numeric data types, are greater than 
 For each spesific month-year, each data in excel format is imported into Pandas library, and bring all data together into one pandas dataframe and be able to analyze data easily.
 
 At the End of Project:
-1)Have information about trend of total premium size/market share of all companies since 2014.
-2)How Allianz total premium/market share size change?
-3)How is relationship between big companies?
-4)Based on the Turkey growth for each year/month, how insurance sector has share this growth, and how insurance companies share this growth, what is the Allianz percentege?
-5)By analyzing Market share trends between companies, have an idea about customer transaction between companies. 
-6)Make predictble modelling about total premium and market share for coming years.
+Have information about trend of total premium size/market share of all companies since 2014.
+How Allianz total premium/market share size change?
+How is relationship between big companies?
+Based on the Turkey growth for each year/month, how insurance sector has share this growth, and how insurance companies share this growth, what is the Allianz percentege?
+By analyzing Market share trends between companies, have an idea about customer transaction between companies. 
+Make predictble modelling about total premium and market share for coming years.
