@@ -1,22 +1,8 @@
 # Insurance_Companies_Analysis
 
-Data Source: 
-https://www.tsb.org.tr/resmi-istatistikler.aspx?pageID=909
-
-Project Aim: 
-Project aim is have knowlegde about trends of total premium and market share for Insurance Companies in Turkey. Especially, to analyze trends between Allianz Turkey and other big insurance companies from 2014 to present. Make predictible modelling about how will be these trends for coming years.
-
-Data Preprocessing:
-Data is collected from "https://www.tsb.org.tr/resmi-istatistikler.aspx?pageID=909". Data is in excel format. 
-From 2014 to 2018 for each month, every insurance companies has own total premium and market share, company name and company code.
-Market share and total premium which is in numeric data types, are greater than zero and not NAN values with same type.
-
-For each spesific month-year, each data in excel format is imported into Pandas library, and bring all data together into one pandas dataframe and be able to analyze data easily.
-
-At the End of Project:
-Have information about trend of total premium size/market share of all companies since 2014.
-How Allianz total premium/market share size change?
-How is relationship between big companies?
-Based on the Turkey growth for each year/month, how insurance sector has share this growth, and how insurance companies share this growth, what is the Allianz percentege?
-By analyzing Market share trends between companies, have an idea about customer transaction between companies. 
-Make predictble modelling about total premium and market share for coming years.
+Data Source: https://www.tsb.org.tr/resmi-istatistikler.aspx?pageID=909
+Project Aim:  The project aim is to gain knowledge on trends of total gross written premium and market share of insurance companies in Turkey.  Specifically, to compare trends of Allianz Turkey with those of other big insurance companies from 2014 to present.  Develop analytical models to predict these trends for upcoming years.
+Data Pre-processing: The data is collected from the Turkish Insurers Union website - "https://www.tsb.org.tr/resmi-istatistikler.aspx?pageID=909".  The data consists of a separate Excel file for each month from 2014 to 2018.  It contains monthly gross written premium and market share figures for every insurance company, as well as company name and company code. Market share and gross written premium are numeric data fields, are always greater than zero and do not have missing values in any record.
+For each spesific month-year, the Excel file is imported into Pandas library, and all data is consolidated into one Pandas dataframe, so that it can be analyzed easily.
+Additional information such as seasonality can be derived from the existing data, and additional external data such as inflation rate, economic growth rate, etc. can be utilized.
+At the End of Project:  We can have information about the trends of gross written premium & market share for all Turkish insurance companies since 2014. The following questions are to be answered: How did Allianz’s total gross written premium / market share change? How do trends compare across major insurance companies? What is the share of the insurance sector in the economic growth in Turkey for each year / month? How did the insurance companies share this growth? What is Allianz’s share in the insurance sector growth? By analyzing market share trends across companies, can we have an idea on customer transfers across companies? We also expect to be able to develop predictive models for gross written premium and market share trends for upcoming years. 
